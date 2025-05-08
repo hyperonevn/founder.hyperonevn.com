@@ -3,76 +3,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LU MINH TRI – Founder Profile</title>
+  <title>Founder – Hyper One</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #0077FF;
+      --bg: #f8fbff;
+      --dark: #1a1a1a;
+    }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      color: #1a1a1a;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
       margin: 0;
       padding: 0;
+      color: var(--dark);
     }
     .container {
-      max-width: 900px;
+      max-width: 860px;
       margin: 60px auto;
       padding: 40px;
       background: white;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-      border-radius: 10px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+      position: relative;
     }
     .avatar {
-      width: 120px;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
       border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 0 20px var(--primary-color);
       margin-bottom: 20px;
     }
+    h1, h2 {
+      margin: 5px 0;
+    }
     h1 {
-      margin: 0;
       font-size: 32px;
     }
     h2 {
+      font-size: 18px;
       font-weight: normal;
-      color: #666;
+      color: #555;
     }
-    .info {
-      margin-top: 30px;
+    .lang-switcher {
+      position: absolute;
+      top: 20px;
+      right: 30px;
     }
-    .info p {
+    .lang-switcher button {
+      background: none;
+      border: none;
+      margin-left: 8px;
+      font-size: 16px;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+    .section {
+      margin-top: 40px;
+    }
+    .section p {
+      line-height: 1.7;
       margin: 10px 0;
-      line-height: 1.6;
     }
-    .highlight {
-      color: #0077FF;
-      font-weight: bold;
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
     }
     .footer {
-      margin-top: 40px;
+      margin-top: 50px;
       font-size: 13px;
       color: #aaa;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+        margin: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container" align="center">
-    <img src="https://raw.githubusercontent.com/hyperonevn/founder.hyperonevn.com//main/founder.png" alt="Avatar" class="avatar" />
-    <h1>LU MINH TRI</h1>
-    <h2>CEO & Founder – HYPER ONE CO., LTD</h2>
-
-    <div class="info" align="left">
-      <p><span class="highlight">Email:</span> minhtri.lu@hyperonevn.com</p>
-      <p><span class="highlight">Website:</span> <a href="https://hyperonevn.com" target="_blank">https://hyperonevn.com</a></p>
-      <p><span class="highlight">Location:</span> 68 Nguyen Hue St, District 1, HCMC</p>
-      <p><span class="highlight">Mobile:</span> +84 352 608 068 / +84 342 608 068</p>
-    </div>
-
-    <div class="info" align="left">
-      <h2 style="margin-top: 40px;">About Me</h2>
-      <p>I’m the founder of <span class="highlight">HYPER ONE</span>, a forward-thinking AI tech company empowering businesses to automate and grow with smart tools.</p>
-      <p>My vision is to <strong>simplify AI for SMEs</strong> and bring enterprise-grade technology to everyone through elegant automation and real-time assistants like <span class="highlight">HYPER BOT</span>.</p>
-    </div>
-
-    <div class="footer">
-      © 2025 Hyper One Co., Ltd. All rights reserved.
-    </div>
+  <div class="lang-switcher">
+    <button onclick="setLang('vi')">🇻🇳</button>
+    <button onclick="setLang('en')">🇬🇧</button>
+    <button onclick="setLang('jp')">🇯🇵</button>
   </div>
+
+  <div class="container" align="center">
+    <img src="https://raw.githubusercontent.com/hyperonevn/founder.hyperonevn.com/main/founder.png" alt="Avatar" class="avatar" />
+
+    <!-- TÊN -->
+    <h1 id="name_vi">LỮ MINH TRÍ</h1>
+    <h1 id="name_en" style="display: none;">LU MINH TRI</h1>
+    <h1 id="name_jp" style="display: none;">ル・ミン・チ</h1>
+
+    <!-- CHỨC DANH -->
+    <h2 id="title_vi">Nhà sáng lập & Giám đốc điều hành – HYPER ONE CO., LTD</h2>
+    <h2 id="title_en" style="display: none;">CEO & Founder – HYPER ONE CO., LTD</h2>
+    <h2 id="title_jp" style="display: none;">創業者・代表取締役 – HYPER ONE CO., LTD</h2>
+
+    <!-- TIẾNG VIỆT -->
+    <div class="section" id="vi">
+      <p>Email: <a href="mailto:minhtri.lu@hyperonevn.com">minhtri.lu@hyperonevn.com</a></p>
+      <p>Website: <a href="https://hyperonevn.com">https://hyperonevn.com</a></p>
+      <p>Địa chỉ: 68 Nguyễn Huệ, Quận 1, TP.HCM</p>
+      <p>SĐT: +84 352 608 068 / +84 342 608 068</p>
+
+      <div class="section">
+        <h3>Giới thiệu</h3>
+        <p>Tôi là nhà sáng lập HYPER ONE – công ty công nghệ AI định hướng toàn cầu. Từ vạch bản vẽ đến điều hành chiến lược, tôi từng trải qua mọi vai trò trong hành trình khởi nghiệp quốc tế, từ Nhật, Singapore đến Việt Nam.</p>
+        <p>Tôi tin rằng AI không chỉ dành cho tập đoàn lớn. Hyper One ra đời để trao quyền cho doanh nghiệp nhỏ với công cụ thông minh, tinh gọn, và cá nhân hóa.</p>
+        <p>Sứ mệnh của tôi là đưa trí tuệ nhân tạo đến mọi SME Châu Á – dễ dùng như Zalo, mạnh mẽ như OpenAI, và đậm chất Việt.</p>
+      </div>
+    </div>
+
+    <!-- ENGLISH -->
+    <div class="section" id="en" style="display:none">
+      <p>Email: <a href="mailto:minhtri.lu@hyperonevn.com">minhtri.lu@hyperonevn.com</a></p>
+      <p>Website: <a href="https://hyperonevn.com">https://hyperonevn.com</a></p>
+      <p>Location: 68 Nguyen Hue, District 1, HCMC</p>
+      <p>Mobile: +84 352 608 068 / +84 342 608 068</p>
+
+      <div class="section">
+        <h3>About Me</h3>
+        <p>I'm the founder of HYPER ONE – an AI-first tech company built for the future of small businesses. From drawing blueprints to leading AI product strategy, I’ve lived through every layer of cross-border business in Japan, Singapore, and Vietnam.</p>
+        <p>I believe AI shouldn't be a privilege. Hyper One exists to empower small teams with smart tools that feel like magic – seamless, personalized, and enterprise-grade.</p>
+        <p>My mission is to bring AI to SMEs across Asia – as easy to use as Zalo, as powerful as OpenAI, and proudly rooted in Vietnam.</p>
+      </div>
+    </div>
+
+    <!-- JAPANESE -->
+    <div class="section" id="jp" style="display:none">
+      <p>メール: <a href="mailto:minhtri.lu@hyperonevn.com">minhtri.lu@hyperonevn.com</a></p>
+      <p>ウェブサイト: <a href="https://hyperonevn.com">https://hyperonevn.com</a></p>
+      <p>所在地: 68 Nguyen Hue 通り, 1区, ホーチミン市</p>
+      <p>電話: +84 352 608 068 / +84 342 608 068</p>
+
+      <div class="section">
+        <h3>自己紹介</h3>
+        <p>私は HYPER ONE の創業者であり、AI を駆使した未来の中小企業のためのテック企業を率いています。日本・シンガポール・ベトナムでの事業経験を通じ、設計から戦略まで多面的に関わってきました。</p>
+        <p>AI は大企業だけの特権ではありません。Hyper One は小さなチームでも利用できるスマートでパーソナライズされたツールを提供するために存在します。</p>
+        <p>私の使命は、Zalo のように簡単で、OpenAI のように強力な AI を、アジア中の中小企業に届けることです。</p>
+      </div>
+    </div>
+
+    <div class="footer">© 2025 Hyper One Co., Ltd. All rights reserved.</div>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      // nội dung
+      document.getElementById("vi").style.display = (lang === 'vi') ? 'block' : 'none';
+      document.getElementById("en").style.display = (lang === 'en') ? 'block' : 'none';
+      document.getElementById("jp").style.display = (lang === 'jp') ? 'block' : 'none';
+
+      // tên
+      document.getElementById("name_vi").style.display = (lang === 'vi') ? 'block' : 'none';
+      document.getElementById("name_en").style.display = (lang === 'en') ? 'block' : 'none';
+      document.getElementById("name_jp").style.display = (lang === 'jp') ? 'block' : 'none';
+
+      // chức danh
+      document.getElementById("title_vi").style.display = (lang === 'vi') ? 'block' : 'none';
+      document.getElementById("title_en").style.display = (lang === 'en') ? 'block' : 'none';
+      document.getElementById("title_jp").style.display = (lang === 'jp') ? 'block' : 'none';
+    }
+  </script>
 </body>
 </html>
